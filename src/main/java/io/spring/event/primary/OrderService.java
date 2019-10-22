@@ -1,7 +1,6 @@
 package io.spring.event.primary;
 
 public class OrderService {
-
     private Dao dao;
 
     public void placeOrder(String orderId) {
