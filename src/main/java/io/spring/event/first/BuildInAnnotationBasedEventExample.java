@@ -1,18 +1,16 @@
 package io.spring.event.first;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ComponentScan;
 
-@Configuration
+@ComponentScan("io.spring.event.first.")
+@RequiredArgsConstructor(onConstructor_ = {@Autowired})
 public class BuildInAnnotationBasedEventExample {
-    @Bean
-    ListenerBean listenerBean() {
-        return new ListenerBean();
-    }
+    private final ListenerBean listenerBean;
 
     public static void main(String[] args) {
-
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
                 BuildInAnnotationBasedEventExample.class);
         System.out.println("----------- stopping context ------------");
@@ -24,6 +22,5 @@ public class BuildInAnnotationBasedEventExample {
         System.out.println("------------ closing context -------------");
         context.close();
         System.out.println("-----------------------------------");
-
     }
 }
