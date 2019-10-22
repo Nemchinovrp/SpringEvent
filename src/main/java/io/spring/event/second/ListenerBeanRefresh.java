@@ -3,7 +3,7 @@ package io.spring.event.second;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 
-public class ListenerBean implements ApplicationListener<ContextRefreshedEvent> {
+public class ListenerBeanRefresh implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {

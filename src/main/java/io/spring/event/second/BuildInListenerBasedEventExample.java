@@ -6,9 +6,18 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BuildInListenerBasedEventExample {
+ /*   @Bean
+    ListenerBeanRefresh listenerBean() {
+        return new ListenerBeanRefresh();
+    }
+*/
     @Bean
-    ListenerBean listenerBean() {
-        return new ListenerBean();
+    ListenerBeanStartContext listenerBeanStartContext() {
+        return new ListenerBeanStartContext();
+    }
+    @Bean
+    ListenerContextClose listenerContextClose() {
+        return new ListenerContextClose();
     }
 
     public static void main(String[] args) {
