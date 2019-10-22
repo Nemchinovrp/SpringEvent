@@ -2,7 +2,6 @@ package io.spring.event.second;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextStartedEvent;
-import org.springframework.stereotype.Component;
 
 public class ListenerBeanStartContext implements ApplicationListener<ContextStartedEvent> {
     @Override

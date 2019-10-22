@@ -8,11 +8,6 @@ import org.springframework.context.event.ContextStoppedEvent;
 import org.springframework.context.event.EventListener;
 
 public class EventListenerExample1 {
-    @Bean
-    AListenerBean listenerBean() {
-        return new AListenerBean();
-    }
-
     public static void main(String[] args) {
 
         AnnotationConfigApplicationContext context =
@@ -22,6 +17,11 @@ public class EventListenerExample1 {
         System.out.println("-- starting context --");
         context.start();
 
+    }
+
+    @Bean
+    AListenerBean listenerBean() {
+        return new AListenerBean();
     }
 
     private static class AListenerBean {
