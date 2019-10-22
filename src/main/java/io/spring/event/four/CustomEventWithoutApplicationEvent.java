@@ -1,20 +1,21 @@
-package io.spring.event.three;
+package io.spring.event.four;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan("io.spring.event.three")
+@ComponentScan("io.spring.event.four")
 @RequiredArgsConstructor(onConstructor_ = {@Autowired})
-public class CustomEventWithApplicationEvent {
-    private final CustomListenerBean customListenerBean;
+public class CustomEventWithoutApplicationEvent {
+    private final CustomListenerBean aListenerBean;
     private final MyEvenPublisherBean myEvenPublisherBean;
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
-                CustomEventWithApplicationEvent.class);
+                CustomEventWithoutApplicationEvent.class);
         MyEvenPublisherBean bean = context.getBean(MyEvenPublisherBean.class);
         bean.sendMsg("A test message");
+
     }
 }
