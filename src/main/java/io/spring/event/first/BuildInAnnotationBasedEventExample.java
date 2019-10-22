@@ -15,11 +15,15 @@ public class BuildInAnnotationBasedEventExample {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
                 BuildInAnnotationBasedEventExample.class);
-        System.out.println("-- stopping context --");
+        System.out.println("----------- stopping context ------------");
         context.stop();
-        System.out.println("-- starting context --");
+        System.out.println("-----------------------------------");
+        System.out.println("------------ starting context -----------");
         context.start();
-        System.out.println("-- closing context --");
+        System.out.println("-----------------------------------");
+        System.out.println("------------ closing context -------------");
         context.close();
+        System.out.println("-----------------------------------");
+
     }
 }
