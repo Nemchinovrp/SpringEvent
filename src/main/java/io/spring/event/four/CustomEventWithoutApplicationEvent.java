@@ -16,6 +16,5 @@ public class CustomEventWithoutApplicationEvent {
                 CustomEventWithoutApplicationEvent.class);
         MyEvenPublisherBean bean = context.getBean(MyEvenPublisherBean.class);
         bean.sendMsg("A test message");
-
     }
 }
