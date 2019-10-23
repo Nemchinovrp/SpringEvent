@@ -8,12 +8,12 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 @Configuration
 public class Config {
     @Bean
-    public MyBean myBean () {
+    public MyBean myBean() {
         return new MyBean();
     }
 
     @Bean
-    public MessageSource messageSource () {
+    public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasename("messages/msg");
         return messageSource;

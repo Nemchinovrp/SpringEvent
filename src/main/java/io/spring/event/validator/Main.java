@@ -9,6 +9,7 @@ public class Main {
                         Config.class);
 
         ClientBean bean = context.getBean(ClientBean.class);
+
         bean.processOrder();
     }
 }

@@ -10,19 +10,19 @@ import java.math.BigDecimal;
 @Configuration
 public class Config {
     @Bean
-    public ClientBean clientBean () {
+    public ClientBean clientBean() {
         return new ClientBean();
     }
 
     @Bean
-    public Order order () {
+    public Order order() {
         Order order = new Order();
         order.setPrice(BigDecimal.ZERO);
         return order;
     }
 
     @Bean
-    public MessageSource messageSource () {
+    public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasename("messages/msg");
         return messageSource;

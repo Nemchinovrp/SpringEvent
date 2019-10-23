@@ -2,7 +2,6 @@ package io.spring.event.validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.validation.DataBinder;
 
 import java.util.Locale;
@@ -13,13 +12,15 @@ public class ClientBean {
     @Autowired
     private MessageSource messageSource;
 
-    public void processOrder () {
+    public void processOrder() {
         if (validateOrder()) {
             System.out.println("processing " + order);
+        } else {
+            System.out.println("Invalid order - " + order.toString());
         }
     }
 
-    private boolean validateOrder () {
+    private boolean validateOrder() {
         DataBinder dataBinder = new DataBinder(order);
         dataBinder.addValidators(new OrderValidator());
         dataBinder.validate();

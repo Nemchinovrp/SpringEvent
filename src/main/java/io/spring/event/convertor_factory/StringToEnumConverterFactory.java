@@ -1,8 +1,5 @@
 package io.spring.event.convertor_factory;
 
-import org.springframework.core.convert.converter.Converter;
-import org.springframework.core.convert.converter.ConverterFactory;
-
 /*
 public class StringToEnumConverterFactory implements ConverterFactory<String, Enum> {
 

@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public class ClientBean {
+    private final Date date;
     @Autowired
     private ConversionService conversionService;
-    private final Date date;
 
     public ClientBean(Date date) {
         this.date = date;

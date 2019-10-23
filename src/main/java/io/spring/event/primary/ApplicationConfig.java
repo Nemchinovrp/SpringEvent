@@ -8,6 +8,14 @@ import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class ApplicationConfig {
+    public static void main(String[] args) {
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(ApplicationConfig.class);
+
+        OrderService orderService = context.getBean(OrderService.class);
+        orderService.placeOrder("122");
+    }
+
     @Bean(autowire = Autowire.BY_TYPE)
     public OrderService orderService() {
         return new OrderService();
@@ -22,13 +30,5 @@ public class ApplicationConfig {
     @Bean
     public Dao daoB() {
         return new DaoB();
-    }
-
-    public static void main(String[] args)  {
-        AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(ApplicationConfig.class);
-
-        OrderService orderService = context.getBean(OrderService.class);
-        orderService.placeOrder("122");
     }
 }
