@@ -26,9 +26,6 @@ public class ClientBean {
         dataBinder.validate();
 
         if (dataBinder.getBindingResult().hasErrors()) {
-          /*  ResourceBundleMessageSource messageSource =
-                    new ResourceBundleMessageSource();
-            messageSource.setBasename("ValidationMessages");*/
             System.out.println(messageSource.getMessage("order.invalid",
                     null, Locale.US));
             dataBinder.getBindingResult().getAllErrors().stream().
