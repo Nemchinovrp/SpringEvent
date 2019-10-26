@@ -1,4 +1,4 @@
-package io.spring.event.resources;
+package io.spring.event.spring_resources;
 
 import org.springframework.context.ResourceLoaderAware;
 import org.springframework.core.io.Resource;
@@ -47,7 +47,8 @@ public class ResourceLoaderService implements ResourceLoaderAware {
      * @throws IOException
      */
     public void showResourceDataUsingFilePath() throws IOException {
-        Resource resource = resourceLoader.getResource("file:d:/test.txt");
+        String filePath = "C:\\Users\\r.nemchinov\\Projects\\Spring-Event\\src\\main\\java\\io\\spring\\event\\spring_resources\\text.txt";
+        Resource resource = resourceLoader.getResource("file:" + filePath);
 
         InputStream in = resource.getInputStream();
 

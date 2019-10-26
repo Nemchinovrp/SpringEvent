@@ -1,11 +1,11 @@
-package io.spring.event.resources;
+package io.spring.event.spring_resources;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext("io.spring.event.resources");
+        ApplicationContext ctx = new AnnotationConfigApplicationContext("io.spring.event.spring_resources");
         ResourceLoaderService loader = (ResourceLoaderService) ctx.getBean("resourceLoaderService");
         try {
             loader.showResourceDataUsingRoot();
